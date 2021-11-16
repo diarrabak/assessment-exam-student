@@ -14,8 +14,10 @@
  *    6
  */
 const mode = function(arr) {
-  /* IMPLEMENT ME */
+
 };
+
+
 
 // Don't change below:
 
