@@ -50,12 +50,12 @@ const mean = function (arr) {
 ////This function determines the standard deviation of the array
 const stdev = function (arr) {
   let arrMean = mean(arr);
-  let arrayDiff = substratFromArray(arr, arrMean);  //Square value of the difference between array element and the mean value
-  let sumSquared = sum(arrayDiff);  //Sum of the squared arrays
+  let arrayDiff = substractFromArray(arr, arrMean); //Square value of the difference between array element and the mean value
+  let sumSquared = sum(arrayDiff); //Sum of the squared arrays
   return round(Math.sqrt(sumSquared / count(arr)));
 };
 
-const substratFromArray = function (array, value) {
+const substractFromArray = function (array, value) {
   let result = [];
   for (var element of array) {
     result.push((element - value) ** 2);
