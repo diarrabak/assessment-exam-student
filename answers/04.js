@@ -27,11 +27,12 @@
 const round = function (number) {
   return Math.round(number * 100) / 100;
 };
-
+//This function counts the number of element in the array
 const count = function (arr) {
   return arr.length;
 };
 
+//This function calculates the sum of elements of the array
 const sum = function (arr) {
   let result = 0;
   for (var value of arr) {
@@ -40,20 +41,26 @@ const sum = function (arr) {
   return result;
 };
 
+//This function determines the mean value of the array
 const mean = function (arr) {
   if (count(arr) < 1) return null;
   return round(sum(arr) / count(arr));
 };
 
+////This function determines the standard deviation of the array
 const stdev = function (arr) {
   let arrMean = mean(arr);
-  let arrayDiff =arr.map(function(element){
-    return (element- arrMean)**2;
-  });
-  let sumSquared=sum(arrayDiff);
-  console.log(sumSquared);
+  let arrayDiff = substratFromArray(arr, arrMean);  //Square value of the difference between array element and the mean value
+  let sumSquared = sum(arrayDiff);  //Sum of the squared arrays
   return round(Math.sqrt(sumSquared / count(arr)));
 };
 
+const substratFromArray = function (array, value) {
+  let result = [];
+  for (var element of array) {
+    result.push((element - value) ** 2);
+  }
+  return result;
+};
 // Don't change below:
 module.exports = { stdev };
