@@ -29,9 +29,8 @@ const mode = function (arr) {
       }
     }
   }
-
+  //return the values elemnt which is at index of the max of modes array
   return values[modes.indexOf(Math.max.apply(null, modes))];
-  // return modes;
 };
 
 //Find the different numbers forming the arrays without duplicates
